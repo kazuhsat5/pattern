@@ -24,8 +24,10 @@ class Money
      */
     public function __construct($amount, $currency)
     {
+        // 引数$amountが数値ではなかった場合
         if ( ! is_numeric($amount)) {
-            throw new \Exception(sprintf('invalid argument. [money=%s]', $amount));
+            // 不正パラメータの例外をスロー
+            throw new \InvalidArgumentException(sprintf('invalid argument. [money=%s]', $amount));
         }
 
         $this->_amount = (integer) $amount;
@@ -33,10 +35,10 @@ class Money
     }
 
     /**
-     * 等価性
+     * 等価性確認
      *
-     * @param Money $money Moneyオブジェクト
-     * @return boolean 等価性(trueで等価)
+     * @param Money $money マネーオブジェクト
+     * @return bool 等価性(trueで等価)
      */
     public function equals(Money $money)
     {
