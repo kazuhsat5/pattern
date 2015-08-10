@@ -12,14 +12,23 @@ namespace Money;
 
 class Money
 {
+    /**
+     * 額
+     * @var integer
+     */
     private $_amount;
+
+    /**
+     * 通貨
+     * @var string
+     */
     private $_currency;
 
     /**
      * コンストラクタ
      *
      * @param integer  $amount    額
-     * @param String   $currency  通貨
+     * @param string   $currency  通貨
      * @throw \InvalidArgumentException 第一引数に数値以外が指定されていた場合
      */
     public function __construct($amount, $currency)
